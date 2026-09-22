@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AR Code Mien Phi</title>
+    <!-- Nhúng thư viện A-Frame và AR.js miễn phí -->
+    <script src="https://aframe.io"></script>
+    <script src="https://githack.com"></script>
+  </head>
+  <body style="margin: 0px; overflow: hidden;">
+    <a-scene embedded arjs>
+      <!-- Khai báo mô hình 3D bạn đã tải lên -->
+      <a-assets>
+        <a-asset-item id="myModel" src="scene.gltf"></a-asset-item>
+      </a-assets>
+
+      <!-- Khi camera quét trúng marker 'hiro', mô hình 3D sẽ hiện ra -->
+      <a-marker preset="hiro">
+        <!-- Bạn có thể chỉnh scale (phóng to/thu nhỏ) hoặc position (vị trí) cho vừa vặn -->
+        
+      </a-marker>
+
+      
+    </scene>
+  </body>
+</html>

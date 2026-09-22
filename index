@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AR Code Mien Phi</title>
-    <!-- Nhúng thư viện A-Frame và AR.js miễn phí -->
-    <script src="https://aframe.io"></script>
-    <script src="https://githack.com"></script>
+    <title>Khung Tranh AR 3D</title>
+    <!-- Nhúng đúng phiên bản thư viện A-Frame và AR.js -->
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   </head>
   <body style="margin: 0px; overflow: hidden;">
-    <a-scene embedded arjs>
-      <!-- Khai báo mô hình 3D bạn đã tải lên -->
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+      <!-- Khai báo file 3D của bạn (scene.gltf) -->
       <a-assets>
         <a-asset-item id="myModel" src="scene.gltf"></a-asset-item>
       </a-assets>
 
-      <!-- Khi camera quét trúng marker 'hiro', mô hình 3D sẽ hiện ra -->
+      <!-- Khi quét trúng hình Hiro Marker, mô hình scene.gltf sẽ hiện ra -->
       <a-marker preset="hiro">
-        <!-- Bạn có thể chỉnh scale (phóng to/thu nhỏ) hoặc position (vị trí) cho vừa vặn -->
-        
+        <a-entity 
+          gltf-model="#myModel" 
+          scale="0.5 0.5 0.5" 
+          position="0 0 0"
+          rotation="0 0 0">
+        </a-entity>
       </a-marker>
 
-      
-    </scene>
+      <a-entity camera></a-entity>
+    </a-scene>
   </body>
 </html>
